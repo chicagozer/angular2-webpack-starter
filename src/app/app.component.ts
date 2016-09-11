@@ -29,6 +29,18 @@ import { AppState } from './app.service';
         </a>
       </span>
       |
+       <span>
+        <a [routerLink]=" ['./ngpage'] ">
+          NgPage
+        </a>
+      </span>
+      |
+       <span>
+        <a [routerLink]=" ['./borough'] ">
+          Borough
+        </a>
+      </span>
+      |
       <span>
         <a [routerLink]=" ['./detail'] ">
           Detail
@@ -46,6 +58,7 @@ import { AppState } from './app.service';
       <router-outlet></router-outlet>
     </main>
 
+<!--
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
     <footer>
@@ -56,6 +69,7 @@ import { AppState } from './app.service';
         </a>
       </div>
     </footer>
+    -->
   `
 })
 export class App {

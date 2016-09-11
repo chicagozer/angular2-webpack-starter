@@ -4,6 +4,11 @@ import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
 
+import { Dealer } from  '../dealer/dealer';
+import { DealerService } from '../dealer/dealer.service';
+
+
+
 @Component({
   // The selector is what angular internally uses
   // for `document.querySelectorAll(selector)` in our index.html
@@ -19,16 +24,32 @@ import { XLarge } from './x-large';
   templateUrl: './home.template.html'
 })
 export class Home {
+  dealers: Dealer[] = [];
+
   // Set our default values
   localState = { value: '' };
+
+
+
+
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
+  constructor(public appState: AppState, public title: Title,
+  private dealerService: DealerService) {
 
   }
 
+  getDealers(): void {
+    this.dealerService
+      .getDealers()
+      .subscribe(dealers => this.dealers = dealers);
+  }
+
   ngOnInit() {
+
+
+    this.getDealers();
     console.log('hello `Home` component');
-    // this.title.getData().subscribe(data => this.data = data);
+
   }
 
   submitState(value: string) {

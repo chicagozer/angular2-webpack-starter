@@ -4,6 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
+import { Ng2PaginationModule } from 'ng2-pagination';
+
+import { PaginationModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
+
+import { Ng2TableModule } from 'ng2-table/ng2-table';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -15,6 +21,8 @@ import { App } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InteralStateType } from './app.service';
 import { Home } from './home';
+import { NgPage } from './ngpage';
+import { BoroughComponent } from './borough';
 import { About } from './about';
 import { NoContent } from './no-content';
 import { XLarge } from './home/x-large';
@@ -39,11 +47,17 @@ type StoreType = {
     App,
     About,
     Home,
+    NgPage,
+    BoroughComponent,
     NoContent,
     XLarge
   ],
   imports: [ // import Angular's modules
     BrowserModule,
+    Ng2PaginationModule,
+    PaginationModule,
+    TabsModule,
+    Ng2TableModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
