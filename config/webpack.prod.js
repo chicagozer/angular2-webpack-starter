@@ -31,6 +31,7 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
 });
 
 module.exports = function(env) {
+  console.log('function called');
   return webpackMerge(commonConfig({env: ENV}), {
 
     /**

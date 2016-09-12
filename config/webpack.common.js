@@ -21,7 +21,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
-  baseUrl: '/angular2-webpack-starter',
+  baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
 
@@ -108,7 +108,7 @@ module.exports = function(options) {
             flags: 'g'
           },
           include: [helpers.root('src')]
-        },
+        }
 
       ],
 
@@ -272,7 +272,7 @@ module.exports = function(options) {
        */
       new HtmlElementsPlugin({
         headTags: require('./head-config.common')
-      }),
+      })
 
     ],
 

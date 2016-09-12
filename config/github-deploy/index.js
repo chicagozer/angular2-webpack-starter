@@ -7,6 +7,7 @@ function getWebpackConfigModule() {
   if (helpers.hasProcessFlag('github-dev')) {
     return require('../webpack.dev.js');
   } else if (helpers.hasProcessFlag('github-prod')) {
+    console.log('loading webpack.prod.js');
     return require('../webpack.prod.js');
   } else {
     throw new Error('Invalid compile option.');
