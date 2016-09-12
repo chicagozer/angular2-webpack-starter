@@ -21,7 +21,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
-  baseUrl: '/angular2-webpack-starter/',
+  baseUrl: '/angular2-webpack-starter',
   isDevServer: helpers.isWebpackDevServer()
 };
 
