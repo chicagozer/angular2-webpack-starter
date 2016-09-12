@@ -15,6 +15,7 @@
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
     "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build": "npm run build:dev",
+    "ghpages": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
     "ci": "npm run lint && npm test && npm run e2e",
     "clean:dist": "npm run rimraf -- dist",
     "clean:install": "npm set progress=false && npm install",
